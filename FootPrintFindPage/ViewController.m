@@ -7,8 +7,14 @@
 //
 
 #import "ViewController.h"
+#import "ZXDCustromLayout.h"
+#import "FootPrintFindCell.h"
 
-@interface ViewController ()
+#define kScreenSize [UIScreen mainScreen].bounds.size
+static NSString *const reuseIndentifier = @"FootPrintFindCell";
+@interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+
+@property (nonatomic,strong) UICollectionView *collectionView;
 
 @end
 
@@ -16,7 +22,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    ZXDCustromLayout *layout = [[ZXDCustromLayout alloc] init];
+    layout.standCellHeight = 100.0;
+    layout.featureCellHeight = 280.0;
+    
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenSize.width, kScreenSize.height) collectionViewLayout:layout];
+    collectionView.decelerationRate = UIScrollViewDecelerationRateFast;
+    collectionView.delegate = self;
+    collectionView.dataSource = self;
+    [collectionView registerClass:[FootPrintFindCell class] forCellWithReuseIdentifier:reuseIndentifier];
+    self.collectionView = collectionView;
+    [self.view addSubview:collectionView];
+}
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+
+    return 1;
+}
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+
+    return 10;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+
+    FootPrintFindCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIndentifier forIndexPath:indexPath];
+    NSString *imageName = [NSString stringWithFormat:@"Inspiration-%ld",(long)indexPath.item  + 1];
+    cell.imageView.image = [UIImage imageNamed:imageName];
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {

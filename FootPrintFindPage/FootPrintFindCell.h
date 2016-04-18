@@ -10,4 +10,5 @@
 
 @interface FootPrintFindCell : UICollectionViewCell
 
+@property (nonatomic,strong) UIImageView *imageView;
 @end

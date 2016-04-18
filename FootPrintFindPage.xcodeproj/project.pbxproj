@@ -13,6 +13,8 @@
 		E1A88CD41CC4B2E800548F0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A88CD21CC4B2E800548F0E /* Main.storyboard */; };
 		E1A88CD61CC4B2E800548F0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1A88CD51CC4B2E800548F0E /* Assets.xcassets */; };
 		E1A88CD91CC4B2E800548F0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A88CD71CC4B2E800548F0E /* LaunchScreen.storyboard */; };
+		E1A88CE81CC4C0DC00548F0E /* FootPrintFindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A88CE71CC4C0DC00548F0E /* FootPrintFindCell.m */; };
+		E1A88CEB1CC4DF9300548F0E /* ZXDCustromLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A88CEA1CC4DF9300548F0E /* ZXDCustromLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		E1A88CD51CC4B2E800548F0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1A88CD81CC4B2E800548F0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1A88CDA1CC4B2E800548F0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1A88CE61CC4C0DC00548F0E /* FootPrintFindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FootPrintFindCell.h; sourceTree = "<group>"; };
+		E1A88CE71CC4C0DC00548F0E /* FootPrintFindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FootPrintFindCell.m; sourceTree = "<group>"; };
+		E1A88CE91CC4DF9300548F0E /* ZXDCustromLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXDCustromLayout.h; sourceTree = "<group>"; };
+		E1A88CEA1CC4DF9300548F0E /* ZXDCustromLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXDCustromLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,8 @@
 		E1A88CC81CC4B2E800548F0E /* FootPrintFindPage */ = {
 			isa = PBXGroup;
 			children = (
+				E1A88CE91CC4DF9300548F0E /* ZXDCustromLayout.h */,
+				E1A88CEA1CC4DF9300548F0E /* ZXDCustromLayout.m */,
 				E1A88CCC1CC4B2E800548F0E /* AppDelegate.h */,
 				E1A88CCD1CC4B2E800548F0E /* AppDelegate.m */,
 				E1A88CCF1CC4B2E800548F0E /* ViewController.h */,
@@ -67,6 +75,8 @@
 				E1A88CD71CC4B2E800548F0E /* LaunchScreen.storyboard */,
 				E1A88CDA1CC4B2E800548F0E /* Info.plist */,
 				E1A88CC91CC4B2E800548F0E /* Supporting Files */,
+				E1A88CE61CC4C0DC00548F0E /* FootPrintFindCell.h */,
+				E1A88CE71CC4C0DC00548F0E /* FootPrintFindCell.m */,
 			);
 			path = FootPrintFindPage;
 			sourceTree = "<group>";
@@ -110,6 +120,7 @@
 				TargetAttributes = {
 					E1A88CC51CC4B2E800548F0E = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 7YD6YGGJZ5;
 					};
 				};
 			};
@@ -151,7 +162,9 @@
 			files = (
 				E1A88CD11CC4B2E800548F0E /* ViewController.m in Sources */,
 				E1A88CCE1CC4B2E800548F0E /* AppDelegate.m in Sources */,
+				E1A88CE81CC4C0DC00548F0E /* FootPrintFindCell.m in Sources */,
 				E1A88CCB1CC4B2E800548F0E /* main.m in Sources */,
+				E1A88CEB1CC4DF9300548F0E /* ZXDCustromLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +274,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = FootPrintFindPage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zxd.FootPrintFindPage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -272,7 +287,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = FootPrintFindPage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zxd.FootPrintFindPage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -298,6 +315,7 @@
 				E1A88CDF1CC4B2E800548F0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

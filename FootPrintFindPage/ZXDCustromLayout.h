@@ -10,4 +10,7 @@
 
 @interface ZXDCustromLayout : UICollectionViewLayout
 
+@property (nonatomic,assign) CGFloat standCellHeight;
+@property (nonatomic,assign) CGFloat featureCellHeight;
+
 @end
