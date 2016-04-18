@@ -22,9 +22,10 @@
 
 @implementation ZXDCustromLayout
 
+//移动一个item所需contentoffset
 -(CGFloat)dragOffset{
 
-    return _featureCellHeight - _standCellHeight;
+    return _featureCellHeight - _standardCellHeight;
 }
 
 //存放每个item的attr
@@ -64,8 +65,8 @@
 }
 
 -(CGSize)collectionViewContentSize{
-
-    CGFloat contentHeight = self.numberOfItems * self.dragOffset + self.height - self.dragOffset;
+    //contentSize 为collectionView的高度 + 每个item放大需要拖拽的偏移量 - 移动一个item的偏移量（因为第一个已经是放大的了）
+    CGFloat contentHeight = self.height + self.numberOfItems * self.dragOffset - self.dragOffset ;
     return CGSizeMake(self.width, contentHeight);
 }
 
@@ -81,15 +82,15 @@
         UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
         attributes.zIndex = item;
         
-        CGFloat height = self.standCellHeight;
+        CGFloat height = self.standardCellHeight;  //初始化所有item的高度为standardCellHeight
         
         if (indexPath.item == self.featureItemIndex) {
-            CGFloat yOffset = self.standCellHeight * self.nextItemPercentageOffset;
-            y = self.collectionView.contentOffset.y - yOffset;
+            CGFloat yOffset = self.standardCellHeight * self.nextItemPercentageOffset;
+            y = self.collectionView.contentOffset.y - yOffset; //因为要产生后一个item覆盖上一个item的视觉效果
             height = self.featureCellHeight;
         }else if(indexPath.item == (self.featureItemIndex + 1) && indexPath.item != self.numberOfItems){
-            CGFloat maxY = y + self.standCellHeight;
-            height = self.standCellHeight + MAX((self.featureCellHeight - self.standCellHeight) * self.nextItemPercentageOffset, 0);
+            CGFloat maxY = y + self.standardCellHeight;
+            height = self.standardCellHeight + MAX((self.featureCellHeight - self.standardCellHeight) * self.nextItemPercentageOffset, 0);
             y = maxY - height;
         }
         frame = CGRectMake(0, y, self.width, height);

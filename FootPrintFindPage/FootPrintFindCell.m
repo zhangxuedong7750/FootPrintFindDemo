@@ -45,9 +45,9 @@
 
     [super applyLayoutAttributes:layoutAttributes];
     self.imageView.center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
-    CGFloat standCellHeight = 100.0;
+    CGFloat standardCellHeight = 100.0;
     CGFloat featureCellHeight = 280.0;
-    CGFloat delta = 1 - ((featureCellHeight - CGRectGetHeight(self.frame)) / (featureCellHeight - standCellHeight));
+    CGFloat delta = 1 - ((featureCellHeight - CGRectGetHeight(self.frame)) / (featureCellHeight - standardCellHeight));
     
     CGFloat minAlpha = 0;
     CGFloat maxAlpha = 0.5;

@@ -24,7 +24,7 @@ static NSString *const reuseIndentifier = @"FootPrintFindCell";
     [super viewDidLoad];
     
     ZXDCustromLayout *layout = [[ZXDCustromLayout alloc] init];
-    layout.standCellHeight = 100.0;
+    layout.standardCellHeight = 100.0;
     layout.featureCellHeight = 280.0;
     
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenSize.width, kScreenSize.height) collectionViewLayout:layout];
