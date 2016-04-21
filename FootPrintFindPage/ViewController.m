@@ -43,7 +43,7 @@ static NSString *const reuseIndentifier = @"FootPrintFindCell";
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
-    return 10;
+    return 15;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
