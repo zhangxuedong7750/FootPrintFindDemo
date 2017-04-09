@@ -32,6 +32,7 @@ static NSString *const reuseIndentifier = @"FootPrintFindCell";
     collectionView.delegate = self;
     collectionView.dataSource = self;
     [collectionView registerClass:[FootPrintFindCell class] forCellWithReuseIdentifier:reuseIndentifier];
+    collectionView.prefetchingEnabled = NO; //ios10之后collectonview有预加载
     self.collectionView = collectionView;
     [self.view addSubview:collectionView];
 }
@@ -48,7 +49,8 @@ static NSString *const reuseIndentifier = @"FootPrintFindCell";
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
-    FootPrintFindCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIndentifier forIndexPath:indexPath];
+    
+    FootPrintFindCell *cell = (FootPrintFindCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIndentifier forIndexPath:indexPath];
     NSString *imageName = [NSString stringWithFormat:@"Inspiration-%ld",(long)indexPath.item  + 1];
     cell.imageView.image = [UIImage imageNamed:imageName];
     return cell;
